@@ -1,0 +1,9 @@
+<ActionBar title="Create Group">
+  <NavigationButton text="Back" android.systemIcon="ic_menu_back" (tap)="router.back()"></NavigationButton>
+</ActionBar>
+
+<StackLayout class="form">
+  <TextField [(ngModel)]="groupName" hint="Group Name" class="input"></TextField>
+  <TextField [(ngModel)]="invitePhoneNumber" hint="Invite by Phone Number" keyboardType="phone" class="input"></TextField>
+  <Button text="Create Group" (tap)="createGroup()" class="btn btn-primary"></Button>
+</StackLayout>

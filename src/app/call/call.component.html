@@ -1,0 +1,13 @@
+<ActionBar [title]="callType === 'audio' ? 'Audio Call' : 'Video Call'" class="action-bar">
+  <NavigationButton text="Back" android.systemIcon="ic_menu_back" (tap)="endCall()"></NavigationButton>
+</ActionBar>
+
+<GridLayout class="call-container">
+  <StackLayout>
+    <Label [text]="callType === 'audio' ? '&#xf095;' : '&#xf03d;'" class="fas call-icon fade-in"></Label>
+    <Label [text]="'Ongoing ' + callType + ' call'" class="call-status fade-in"></Label>
+    <StackLayout class="call-actions">
+      <Button text="&#xf00d;" class="fas end-call-btn" (tap)="endCall()"></Button>
+    </StackLayout>
+  </StackLayout>
+</GridLayout>

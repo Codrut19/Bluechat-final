@@ -1,0 +1,69 @@
+@import '@nativescript/theme/css/core.css';
+@import '@nativescript/theme/css/default.css';
+
+.fas {
+  font-family: "Font Awesome 5 Free", "fa-solid-900";
+  font-weight: 900;
+}
+
+.fab {
+  font-family: "Font Awesome 5 Brands", "fa-brands-400";
+  font-weight: 400;
+}
+
+/* Global styles */
+.page {
+  background-color: #F0F2F5;
+}
+
+.action-bar {
+  background-color: #1877F2;
+  color: white;
+}
+
+.btn-primary {
+  background-color: #1877F2;
+  color: white;
+  font-weight: bold;
+  border-radius: 20;
+}
+
+.btn-primary:active {
+  background-color: #1565C0;
+}
+
+.input {
+  border-width: 1;
+  border-color: #E0E0E0;
+  border-radius: 5;
+  padding: 10;
+  margin-bottom: 10;
+}
+
+/* Dark mode styles */
+.ns-dark {
+  background-color: #121212;
+  color: #FFFFFF;
+}
+
+.ns-dark .page {
+  background-color: #121212;
+}
+
+.ns-dark .action-bar {
+  background-color: #1F1F1F;
+}
+
+.ns-dark .input {
+  background-color: #1F1F1F;
+  color: #FFFFFF;
+  border-color: #333333;
+}
+
+.ns-dark .btn-primary {
+  background-color: #2196F3;
+}
+
+.ns-dark .btn-primary:active {
+  background-color: #1976D2;
+}

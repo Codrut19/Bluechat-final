@@ -1,0 +1,31 @@
+.call-container {
+  background-color: #1877F2;
+}
+
+.call-status {
+  color: white;
+  font-size: 24;
+  text-align: center;
+  margin-top: 50;
+}
+
+.end-call-btn {
+  width: 60;
+  height: 60;
+  border-radius: 30;
+  background-color: #FF4136;
+  color: white;
+  font-size: 24;
+  padding: 0;
+}
+
+.call-actions {
+  margin-top: 50;
+}
+
+.call-icon {
+  font-size: 72;
+  color: white;
+  text-align: center;
+  margin-bottom: 20;
+}

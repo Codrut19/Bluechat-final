@@ -1,0 +1,19 @@
+<ActionBar title="Profile" class="action-bar">
+  <NavigationButton text="Back" android.systemIcon="ic_menu_back"></NavigationButton>
+</ActionBar>
+
+<ScrollView class="page">
+  <StackLayout class="form">
+    <Image [src]="profilePictureUrl || '~/assets/default-profile.png'" class="profile-picture" (tap)="changeProfilePicture()"></Image>
+    <Label text="Tap to change profile picture" class="hint-label"></Label>
+
+    <TextField [(ngModel)]="displayName" hint="Display Name" class="input"></TextField>
+
+    <Button text="Update Profile" (tap)="updateProfile()" class="btn btn-primary"></Button>
+
+    <GridLayout columns="*, auto" class="setting-item">
+      <Label text="Dark Mode" col="0"></Label>
+      <Switch [(ngModel)]="isDarkMode" (checkedChange)="toggleDarkMode()" col="1"></Switch>
+    </GridLayout>
+  </StackLayout>
+</ScrollView>

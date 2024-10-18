@@ -1,0 +1,40 @@
+<ActionBar [title]="'Chat'" class="action-bar">
+  <NavigationButton text="Back" android.systemIcon="ic_menu_back" (tap)="goBack()"></NavigationButton>
+  <ActionItem ios.position="right" android.position="actionBar" (tap)="openGroupInfo()">
+    <Label text="&#xf129;" class="fas" color="white"></Label>
+  </ActionItem>
+  <ActionItem ios.position="right" android.position="actionBar" (tap)="startCall('audio')">
+    <Label text="&#xf095;" class="fas" color="white"></Label>
+  </ActionItem>
+  <ActionItem ios.position="right" android.position="actionBar" (tap)="startCall('video')">
+    <Label text="&#xf03d;" class="fas" color="white"></Label>
+  </ActionItem>
+</ActionBar>
+
+<GridLayout rows="auto, *, auto" class="page">
+  <SearchBar row="0" [(ngModel)]="searchQuery" (submit)="searchMessages()" hint="Search messages" class="search-bar"></SearchBar>
+
+  <ListView row="1" [items]="messages" class="message-list">
+    <ng-template let-message="item">
+      <GridLayout rows="auto, auto" [class]="message.sender === '1234567890' ? 'message user slide-in' : 'message bot slide-in'">
+        <StackLayout row="0">
+          <Label *ngIf="message.text" [text]="message.text" textWrap="true" class="message-text"></Label>
+          <Image *ngIf="message.imageUrl" [src]="message.imageUrl" stretch="aspectFit" class="message-image"></Image>
+          <Label [text]="message.timestamp | date:'short'" class="message-time"></Label>
+        </StackLayout>
+        <GridLayout row="1" columns="auto, auto, auto, auto" class="reaction-bar">
+          <Label col="0" text="👍" class="reaction" (tap)="addReaction(message.id, 'like')"></Label>
+          <Label col="1" text="❤️" class="reaction" (tap)="addReaction(message.id, 'love')"></Label>
+          <Label col="2" text="😂" class="reaction" (tap)="addReaction(message.id, 'laugh')"></Label>
+          <Label col="3" text="😮" class="reaction" (tap)="addReaction(message.id, 'wow')"></Label>
+        </GridLayout>
+      </GridLayout>
+    </ng-template>
+  </ListView>
+
+  <GridLayout row="2" columns="auto, *, auto" class="input-bar">
+    <Button col="0" text="&#xf030;" class="fas camera-button" (tap)="sendImage()"></Button>
+    <TextField col="1" [(ngModel)]="newMessage" hint="Type a message" returnKeyType="send" (returnPress)="sendMessage()" class="input-field"></TextField>
+    <Button col="2" text="&#xf1d8;" class="fas send-button" (tap)="sendMessage()"></Button>
+  </GridLayout>
+</GridLayout>

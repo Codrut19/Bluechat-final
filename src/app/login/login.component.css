@@ -1,0 +1,30 @@
+.form {
+  margin-left: 30;
+  margin-right: 30;
+  flex-grow: 2;
+  vertical-align: middle;
+}
+
+.header {
+  font-size: 25;
+  margin-bottom: 30;
+  text-align: center;
+  color: #1877F2;
+}
+
+.input {
+  margin-bottom: 20;
+}
+
+.btn-primary {
+  margin-top: 20;
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
+}
+
+.logo {
+  font-size: 72;
+  text-align: center;
+  color: #1877F2;
+  margin-bottom: 30;
+}

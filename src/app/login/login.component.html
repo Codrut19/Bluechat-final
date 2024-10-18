@@ -1,0 +1,16 @@
+<ActionBar title="Login" class="action-bar"></ActionBar>
+
+<StackLayout class="form page">
+  <Label text="&#xf232;" class="fab logo"></Label>
+  <Label text="Welcome to BlueChat" class="header"></Label>
+  
+  <StackLayout *ngIf="!isVerificationStep">
+    <TextField [(ngModel)]="phoneNumber" hint="Phone Number" keyboardType="phone" class="input slide-in"></TextField>
+    <Button text="Register" (tap)="onRegister()" class="btn btn-primary fade-in"></Button>
+  </StackLayout>
+  
+  <StackLayout *ngIf="isVerificationStep">
+    <TextField [(ngModel)]="verificationCode" hint="Verification Code" keyboardType="number" class="input slide-in"></TextField>
+    <Button text="Verify" (tap)="onVerify()" class="btn btn-primary fade-in"></Button>
+  </StackLayout>
+</StackLayout>

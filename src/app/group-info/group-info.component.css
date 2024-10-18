@@ -1,0 +1,31 @@
+.group-name {
+  font-size: 24;
+  font-weight: bold;
+  text-align: center;
+  margin: 20 0;
+}
+
+.section-header {
+  font-size: 18;
+  font-weight: bold;
+  margin: 10 0;
+}
+
+.member-list {
+  height: 200;
+}
+
+.member-item {
+  padding: 10;
+  border-bottom-width: 1;
+  border-bottom-color: #E0E0E0;
+}
+
+.add-member {
+  margin-top: 20;
+}
+
+.btn-danger {
+  background-color: #FF4136;
+  color: white;
+}

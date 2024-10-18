@@ -1,0 +1,22 @@
+<ActionBar title="Groups" class="action-bar">
+  <ActionItem ios.position="right" android.position="actionBar" (tap)="createGroup()">
+    <Label text="&#xf067;" class="fas" color="white"></Label>
+  </ActionItem>
+  <ActionItem ios.position="right" android.position="actionBar" (tap)="signOut()">
+    <Label text="&#xf2f5;" class="fas" color="white"></Label>
+  </ActionItem>
+</ActionBar>
+
+<GridLayout class="page">
+  <ListView [items]="groups" class="group-list">
+    <ng-template let-group="item">
+      <GridLayout columns="*, auto" class="group-item slide-in" (tap)="onGroupTap(group.id)">
+        <Label [text]="group.name" col="0" class="group-name"></Label>
+        <Label [text]="(group.members | keyvalue).length + ' members'" col="1" class="members-count"></Label>
+      </GridLayout>
+    </ng-template>
+  </ListView>
+  <GridLayout class="fab-button" (tap)="createGroup()">
+    <Label text="+" class="fas"></Label>
+  </GridLayout>
+</GridLayout>
